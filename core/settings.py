@@ -83,6 +83,14 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+    },
+    'my': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'LCapistran25$NaPanela',  # Substitua pelo nome do seu banco de dados
+        'USER': 'LCapistran25',             # Seu nome de usuário
+        'PASSWORD': 'Capistrano@445',            # Substitua pela sua senha 
+        'HOST': 'LCapistran25.mysql.pythonanywhere-services.com',  # Host do MySQL
+        'PORT': '3306',                      # Porta padrão do MySQL
     }
 }
 
