@@ -86,11 +86,11 @@ DATABASES = {
     },
     'my': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'LCapistran25$NaPanela',  # Substitua pelo nome do seu banco de dados
-        'USER': 'LCapistran25',             # Seu nome de usuário
-        'PASSWORD': 'Capistrano@445',            # Substitua pela sua senha 
+        'NAME': 'NaPanela',  # Nome do banco de dados
+        'USER': 'LCapistran25',  # Seu nome de usuário
+        'PASSWORD': 'Capistrano@445',  # Sua senha 
         'HOST': 'LCapistran25.mysql.pythonanywhere-services.com',  # Host do MySQL
-        'PORT': '3306',                      # Porta padrão do MySQL
+        'PORT': '3306',  # Porta padrão do MySQL
     }
 }
 
