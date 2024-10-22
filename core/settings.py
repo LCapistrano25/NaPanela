@@ -81,13 +81,16 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 DATABASES = {
     'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    },
+    'my': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'NaPanela$LCapistran25',
-        'USER': 'LCapistran25',
-        'PASSWORD': 'Capistrano@445',
-        'HOST': 'LCapistran25.mysql.pythonanywhere-services.com',
+        'NAME': 'NaPanela$LCapistran25',  # Nome do banco de dados
+        'USER': 'LCapistran25',  # Seu nome de usuário
+        'PASSWORD': 'Capistrano@445',  # Sua senha 
+        'HOST': '10.0.4.226',  # Host do MySQL
     }
-
 }
 
 
