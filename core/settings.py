@@ -89,7 +89,7 @@ DATABASES = {
         'NAME': 'NaPanela$LCapistran25',  # Nome do banco de dados
         'USER': 'LCapistran25',  # Seu nome de usuário
         'PASSWORD': 'Capistrano@445',  # Sua senha 
-        'HOST': 'LCapistran25.mysql.pythonanywhere-services.com',  # Host do MySQL
+        'HOST': '10.0.4.226',  # Host do MySQL
     }
 }
 
