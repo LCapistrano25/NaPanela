@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-w$n203ax_do_4$g@^+!e$v1#jy_c_2fr!vj=z^i$!o_1!uo5d)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["LCapistran25.pythonanywhere.com"]
 
 
 # Application definition
@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'rest_framework_simplejwt',
     'authentication',
     'users',
     'categories',
