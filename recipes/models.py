@@ -16,7 +16,13 @@ class Recipe(BaseModel):
         db_column='imagem', 
         verbose_name='Imagem'
     )
-
+    
+    description = models.TextField(
+        null=True,
+        blank=True,
+        db_column='descricao',
+        verbose_name='Descrição'
+    )
     ingredients = models.TextField(
         db_column='ingredientes', 
         verbose_name='Ingredientes'
