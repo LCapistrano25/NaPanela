@@ -10,7 +10,7 @@ class RecipeAdmin(admin.ModelAdmin):
     
     fieldsets = (
         (None, {
-            'fields': ('name', 'image', 'ingredients', 'preparation', 'category_id', 'country_id', 'status')
+            'fields': ('name', 'image', 'description', 'ingredients', 'preparation', 'category_id', 'country_id', 'status')
         }),
         ('Control', {
             'fields': ('created_by', 'created_at', 'updated_by', 'updated_at'),
