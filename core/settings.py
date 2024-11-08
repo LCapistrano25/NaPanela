@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 from datetime import timedelta
 import os
 from pathlib import Path
+from corsheaders.defaults import default_headers
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,8 +28,11 @@ SECRET_KEY = 'django-insecure-w$n203ax_do_4$g@^+!e$v1#jy_c_2fr!vj=z^i$!o_1!uo5d)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
-
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+    'localhost',
+    'lcapistran25.pythonanywhere.com',
+]
 
 # Application definition
 
@@ -56,6 +60,30 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
+
+CORS_ALLOW_CREDENTIALS = True
+
+CSRF_COOKIE_SECURE = True  # Ative apenas se estiver usando HTTPS
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "http://localhost:8000",
+    "https://lcapistran25.pythonanywhere.com",
+]
+
+CORS_ORIGIN_WHITELIST = [
+    "http://localhost:3000",
+    "http://localhost:8000",
+    "https://lcapistran25.pythonanywhere.com",
+]
+
+CORS_ALLOW_HEADERS = list(default_headers) + [
+    'Access-Control-Allow-Origin',
+    'Access-Control-Allow-Headers',
+    'Access-Control-Allow-Methods',
+    'Access-Control-Allow-Credentials',
 ]
 
 ROOT_URLCONF = 'core.urls'
