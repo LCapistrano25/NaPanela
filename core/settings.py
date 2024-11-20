@@ -69,9 +69,10 @@ MIDDLEWARE = [
 
 CORS_ALLOW_CREDENTIALS = True
 
-CSRF_COOKIE_SECURE = True  # Ative apenas se estiver usando HTTPS
+CSRF_COOKIE_SECURE = False
 
 CORS_ALLOW_ALL_ORIGINS = False
+
 CORS_ORIGIN_WHITELIST = [
     "http://localhost:3000",
     "http://127.0.0.1:5500",
