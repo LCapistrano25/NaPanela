@@ -4,6 +4,7 @@ from core.models import BaseModel
 
 from categories.models import Category
 from country.models import Country
+from users.models import User
 
 class Recipe(BaseModel):
     name = models.CharField(
@@ -64,7 +65,7 @@ class Recipe(BaseModel):
 
 class UserRecipe(BaseModel):
     user_id = models.ForeignKey(
-        'users.User', 
+        User, 
         on_delete=models.CASCADE, 
         db_column='id_usuario', 
         verbose_name='Usuário'
@@ -88,5 +89,6 @@ class UserRecipe(BaseModel):
         verbose_name = 'Usuário Receita'
         verbose_name_plural = 'Usuários Receitas'
 
+        unique_together = ['user_id', 'recipe_id']
     def __str__(self):
         return f'{self.user_id} - {self.recipe_id}'
