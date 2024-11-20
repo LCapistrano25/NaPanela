@@ -68,17 +68,16 @@ MIDDLEWARE = [
 
 
 CORS_ALLOW_CREDENTIALS = True
-CORS_ALLOW_ALL_ORIGINS = True
 
 CSRF_COOKIE_SECURE = True  # Ative apenas se estiver usando HTTPS
 
+CORS_ALLOW_ALL_ORIGINS = False
 CORS_ORIGIN_WHITELIST = [
     "http://localhost:3000",
-    "http://localhost:8000",
-    "http://localhost:5500",
-    "https://lcapistran25.pythonanywhere.com",
     "http://127.0.0.1:5500",
+    "https://lcapistran25.pythonanywhere.com",
 ]
+
 
 CORS_ALLOW_HEADERS = [
     "accept",
