@@ -1,5 +1,5 @@
 from core.mixins import SaveSerializerMixin
-from recipes.models import Recipe, UserRecipe
+from recipes.models import Recipe, UserRecipe, WeeklyRecipe
 from rest_framework import serializers
 
 class RecipeModelSerializer(SaveSerializerMixin, serializers.ModelSerializer):
@@ -23,4 +23,10 @@ class UserRecipeModelSerializer(SaveSerializerMixin, serializers.ModelSerializer
     class Meta:
         model = UserRecipe
         fields = ['id', 'user_id', 'recipe_id', 'status', 'created_by_name', 'created_at', 
+                  'updated_by_name', 'updated_at']
+        
+class WeeklyRecipeModelSerializer(SaveSerializerMixin, serializers.ModelSerializer):
+    class Meta:
+        model = WeeklyRecipe
+        fields = ['id', 'user_id', 'recipe_id', 'week', 'month', 'year', 'created_by_name', 'created_at', 
                   'updated_by_name', 'updated_at']

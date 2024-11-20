@@ -3,7 +3,8 @@ from recipes.views import (
     RecipeListCreateAPIView, 
     RecipeRetrieveUpdateDestroyAPIView, 
     UserRecipeListCreateAPIView, 
-    UserRecipeRetrieveUpdateDestroyAPIView
+    UserRecipeRetrieveUpdateDestroyAPIView,
+    RandomRecipeListAPIView
 )
 
 urlpatterns = [
@@ -27,5 +28,11 @@ urlpatterns = [
         'user-recipes/<int:pk>/', 
         UserRecipeRetrieveUpdateDestroyAPIView.as_view(), 
         name='user-recipe-retrieve-update-destroy'
+    ),
+
+    path(
+        'random-recipes/', 
+        RandomRecipeListAPIView.as_view(), 
+        name='random-recipe-list'
     ),
 ]

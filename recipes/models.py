@@ -92,3 +92,40 @@ class UserRecipe(BaseModel):
         unique_together = ['user_id', 'recipe_id']
     def __str__(self):
         return f'{self.user_id} - {self.recipe_id}'
+    
+class WeeklyRecipe(BaseModel):
+    user_id = models.ForeignKey(
+        User, 
+        on_delete=models.CASCADE, 
+        db_column='id_usuario', 
+        verbose_name='Usuário'
+    )
+
+    recipe_id = models.ForeignKey(
+        Recipe, 
+        on_delete=models.CASCADE, 
+        db_column='id_receita', 
+        verbose_name='Receita'
+    )
+
+    week = models.IntegerField(
+        db_column='semana', 
+        verbose_name='Semana'
+    )
+
+    month = models.IntegerField(
+        db_column='mes', 
+        verbose_name='Mês'
+    )
+
+    year = models.IntegerField(
+        db_column='ano', 
+        verbose_name='Ano'
+    )
+
+    class Meta: 
+        db_table = 'tb_semanal_receita'
+        verbose_name = 'Semanal Receita'
+        verbose_name_plural = 'Semanais Receitas'
+
+        unique_together = ['user_id', 'recipe_id', 'week', 'month', 'year']
