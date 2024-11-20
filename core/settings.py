@@ -66,19 +66,17 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-
 CORS_ALLOW_CREDENTIALS = True
 
-CSRF_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = False  # Mantenha False apenas em desenvolvimento
 
-CORS_ALLOW_ALL_ORIGINS = False
+CORS_ALLOW_ALL_ORIGINS = False  # Deve ser False, pois estamos usando CORS_ORIGIN_WHITELIST
 
 CORS_ORIGIN_WHITELIST = [
     "http://localhost:3000",
     "http://127.0.0.1:5500",
     "https://lcapistran25.pythonanywhere.com",
 ]
-
 
 CORS_ALLOW_HEADERS = [
     "accept",
@@ -87,10 +85,6 @@ CORS_ALLOW_HEADERS = [
     "user-agent",
     "x-csrftoken",
     "x-requested-with",
-    'Access-Control-Allow-Origin',
-    'Access-Control-Allow-Headers',
-    'Access-Control-Allow-Methods',
-    'Access-Control-Allow-Credentials',
 ]
 
 CORS_ALLOW_METHODS = [
@@ -101,6 +95,7 @@ CORS_ALLOW_METHODS = [
     "POST",
     "PUT",
 ]
+
 
 ROOT_URLCONF = 'core.urls'
 
