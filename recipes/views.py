@@ -12,31 +12,31 @@ from recipes.filters import RecipeFilter, UserRecipeFilter
 from recipes.utils import get_recipe, random_recipe, create_weekly_recipe
 
 class RecipeListCreateAPIView(ListCreateAPIView):
-    permission_classes = [IsAuthenticated]
+    #permission_classes = [IsAuthenticated]
     queryset = Recipe.objects.all()
     serializer_class = RecipeModelSerializer
     filter_backends = [DjangoFilterBackend]
     filterset_class = RecipeFilter
 
 class RecipeRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
-    permission_classes = [IsAuthenticated]
+    #permission_classes = [IsAuthenticated]
     queryset = Recipe.objects.all()
     serializer_class = RecipeModelSerializer
 
 class UserRecipeListCreateAPIView(ListCreateAPIView):
-    permission_classes = [IsAuthenticated]
+    #permission_classes = [IsAuthenticated]
     queryset = UserRecipe.objects.all()
     serializer_class = UserRecipeModelSerializer
     filter_backends = [DjangoFilterBackend]
     filterset_class = UserRecipeFilter
 
 class UserRecipeRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
-    permission_classes = [IsAuthenticated]
+    #permission_classes = [IsAuthenticated]
     queryset = UserRecipe.objects.all()
     serializer_class = UserRecipeModelSerializer
 
 class RandomRecipeListAPIView(ListCreateAPIView):
-    permission_classes = [IsAuthenticated]
+    #permission_classes = [IsAuthenticated]
     queryset = Recipe.objects.all()
     serializer_class = RecipeModelSerializer
 
