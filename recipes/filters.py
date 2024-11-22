@@ -4,6 +4,7 @@ from .models import Recipe, UserRecipe
 
 class RecipeFilter(django_filters.FilterSet):
     user_id = django_filters.CharFilter(method='filter_user_id')  # Atualizado para o método correto
+    name = django_filters.CharFilter(field_name='name', lookup_expr='icontains')
 
     class Meta:
         model = Recipe
@@ -16,7 +17,9 @@ class RecipeFilter(django_filters.FilterSet):
 class UserRecipeFilter(django_filters.FilterSet):
     user_id = django_filters.CharFilter(field_name='user_id', lookup_expr='exact')
     recipe_id = django_filters.CharFilter(field_name='recipe_id', lookup_expr='exact')
-                                          
+
+    name = django_filters.CharFilter(field_name='recipe_id__name', lookup_expr='icontains')
+
     class Meta:
         model = UserRecipe
         fields = ['user_id', 'recipe_id']
